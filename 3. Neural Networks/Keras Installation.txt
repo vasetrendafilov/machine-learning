@@ -1,0 +1,32 @@
+1. Зошто треба да креираме нова околина во anaconda?
+Keras е тестиран за python 3.6, но anaconda доаѓа со python 3.7. 
+Со цел да имаме сигурна работа на Keras ќе инсталираме python 3.6.
+За да не правиме downgrade на цела anaconda заедно со сите библиотеки ќе креираме нова околина 
+која што ќе биде специјално наменета за Машинско учење.
+
+2. Креирајте нова околина со име mlenv која ќе работи на python 3.6
+
+- conda create --name mlenv python=3.6
+
+3. Секој пат кога ќе сакате да работите со машинско учење ќе треба да ја повикувате оваа околина
+- conda activate mlenv
+
+4. Инсталирајте ја библиотеката Keras:
+- conda install --channel anaconda keras - За тренирање со CPU
+- conda install --channel anaconda keras-gpu - За тренирање со GPU(Многу побрзо но работи само со NVIDIA)
+
+5. Додадете било која библиотека која ви недостасува што ја користевте од изворната околина
+- conda install pandas
+- conda install seaborn
+- conda install scikit-learn
+- conda install jupyterlab
+
+7. Проверете дали се' работи како што треба
+- python
+- import keras
+- import tensorflow
+
+8. Оваа околина сега можете да ја користите строго само за машинско учење. 
+Доколку сакате да користите python 3.7 во изворната околина тогаш секогаш можете да направите:
+
+- conda deactivate
